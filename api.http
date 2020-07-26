@@ -1,0 +1,44 @@
+@baseUrl = http://localhost:5000/api
+@token = eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjExYzNkZDI1LTc0MzctNGU3NC05ODk4LWNlMjRmZmIyMWNiNiIsImp0aSI6ImRlODc1OWIzLTQxYzktNDA2Yy05Y2FlLTdiNjJjMTEzZGUwOSIsImV4cCI6MTU5NTc0MzIwMCwiaXNzIjoiZjgyOTE0NmQtMWJjMy00ZjE5LWFjN2MtNGZhZmY3MTRkY2VjIiwiYXVkIjoiZjgyOTE0NmQtMWJjMy00ZjE5LWFjN2MtNGZhZmY3MTRkY2VjIn0.cknTm2sdOzkx5INq43IsUNxH4MZB7KuNppOZ-e6obTY
+
+POST {{baseUrl}}/users/authenticate HTTP/1.1
+Content-type: application/json
+
+{
+    "userName": "test"
+}
+
+###
+
+POST {{baseUrl}}/users/refresh-token HTTP/1.1
+Content-type: application/json
+
+{"token":"eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImIzYTFlMmIwLTRlNDUtNDI4OS05MWE3LTI3NDg2MWIzNjQ0NiIsImp0aSI6ImJhOTZiNTE0LTQyMzktNGY4Yy1hZGZmLTVjOGYwODZhNDVlNSIsImV4cCI6MTU5NTcyMzQ1NCwiaXNzIjoiZjgyOTE0NmQtMWJjMy00ZjE5LWFjN2MtNGZhZmY3MTRkY2VjIiwiYXVkIjoiZjgyOTE0NmQtMWJjMy00ZjE5LWFjN2MtNGZhZmY3MTRkY2VjIn0.WuWkAL8i4KJNd3u6BNkyRiVRuEVyQS4S0bTOlGJ_ph8","refreshToken":"DchgKYS/VVdoDH3BTCCj0ApLWZ918GE8XCjJMdjygQ3isQZHct+vYZKjfpoGheucazfPBZmaPFYh7PXQ5SidSw=="}
+
+
+###
+
+POST {{baseUrl}}/products HTTP/1.1
+Content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "productName": "test-product 3"
+}
+
+###
+
+POST {{baseUrl}}/bids HTTP/1.1
+Content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "productId": "fcf7cb5e-e920-4440-a23b-e43358e41c13",
+    "price": 7.99
+}
+
+###
+
+GET {{baseUrl}}/auctions HTTP/1.1
+Authorization: Bearer {{token}}
+Content-type: application/json
