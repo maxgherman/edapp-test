@@ -1,4 +1,4 @@
-# EDApp Test
+# EdApp Test
 
 ## Dotnet Core REST APIs for the online auction management
 
@@ -31,7 +31,7 @@ The project represents a collection of APIs for placing bids and monitoring bid 
         - [Service layer pattern](https://en.wikipedia.org/wiki/Service_layer_pattern)
         - [Database adapter pattern](https://en.wikipedia.org/wiki/Adapter_pattern)
 - [x] Authentication
-    - Refresh token redemption flow (https://docs.microsoft.com/en-us/azure/active-directory/develop/security-tokens)
+    - [Refresh token redemption flow](https://docs.microsoft.com/en-us/azure/active-directory/develop/security-tokens)
         - [Tokens](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow#refresh-the-access-token)
 - [x] Persistence
     - In-memory collections
