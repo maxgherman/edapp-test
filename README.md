@@ -247,4 +247,15 @@ Note: Kubernetes network architecture provided consist of the public subnets onl
 
 ![Infrastructure architecture](./diagrams/infrastructure.png)
 
+## Future enhancements
+
+- [] - Separate front-end and back-end
+    * Implement front-end as a separate static React web site
+    * Deploy front-end into a separate s3 bucket configured for web hosting
+- [] - Kubernetes
+    * Introduce private subnets for nodes
+    * Introduce NAT Gateways for public subnets
+- [] - High performance/scalability
+    * Remove In-memory collection persistence
+    * Use DynamoDB as auction management store
 

@@ -21,6 +21,7 @@ namespace EdAppTest.Features.Bids
             Bid = auction.Bid == null ? null : new BidViewModel
                 {
                     Id = auction.Bid.Id,
+                    UserId = auction.Bid.UserId,
                     Price = auction.Bid.Price
                 };
                 
@@ -30,6 +31,8 @@ namespace EdAppTest.Features.Bids
         public class BidViewModel
         {
             public Guid Id { get; set; }
+
+            public Guid UserId { get; set; }
 
             public decimal Price { get; set; }
 
